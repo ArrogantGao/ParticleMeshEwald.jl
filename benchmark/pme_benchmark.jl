@@ -21,7 +21,7 @@ function main()
     rho = 1.0
     ns = Int.(ceil.(10.0 .^ range(3, 7, length = 30)))
 
-    sa = [(2, 1.5)]
+    sa = [(4, 1.2)]
     for (s, alpha) in sa
         df = CSV.write(joinpath(@__DIR__, "pme_benchmark_s$(s).csv"), DataFrame(n = Int[], s = Float64[], alpha = Float64[], t_short = Float64[], t_long = Float64[], t_total = Float64[]))
         for n in ns
